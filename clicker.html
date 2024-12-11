@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>clicker.html</title>
-</head> 
-<body> 
-  <h1>score=0</h1>
-  <img id="SeaofThieves" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJPmqlQ1pwq-KCay8ZS3wnaphIRyfdh6oXkiZ3FIgv4jWSgcfw:https://i.scdn.co/image/ab6761610000e5eb1595c1996c36f3fe1bf3eade&s">
+</head>
+
+<body>
+  <h1 id="score">score=0</h1>
+  <img id="SeaofThieves"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJPmqlQ1pwq-KCay8ZS3wnaphIRyfdh6oXkiZ3FIgv4jWSgcfw:https://i.scdn.co/image/ab6761610000e5eb1595c1996c36f3fe1bf3eade&s">
+  <button id="doubleclick" type="" button">upgrade</button>
 </body>
-</html> 
+
+</html>
 <script>
-document.getElementById("SeaofThieves").addEventListener("click",up)  
-var score = 0;
-function up() {
-  score = score +1  
-console.log(score)  
-} 
-const element = document.getElementById("click",up); 
-element.innerHTML = "New Heading";   
+  document.getElementById("SeaofThieves").addEventListener("click", up)
+  document.getElementById("doubleclick").addEventListener("click", upgrade)
+  var score = 0;
+  var scorePerClick = 1
+
+  function up() {
+    score = score + scorePerClick
+    document.getElementById("score").innerText = score
+  }
+  function upgrade() {
+    // if score greaterthan 5 then scorePerClick increase by 2  
+    if (score >= 10) {
+      scorePerClick = scorePerClick + 2
+    }
+  }
+
+
 </script>

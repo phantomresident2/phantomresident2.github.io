@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>eventListeners.html</title>
+</head>
+
+<body>
+
+
+  <img id="cat"
+    src="https://basepaws.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fqj2yxv39d6ig%2F4NshXO0a97krayrHVBpYkN%2Fd329a2910e2dc7dbba7987395bca1128%2F00024-3425245234544-transformed_600x600.jpg%3Fw%3D755%26h%3D378%26q%3D80&w=1920&q=75">
+  <p id="hello">Hello</p>
+  <p id="numberText">1</p>
+</body>
+
+</html>
+<script>
+  document.getElementById("cat").addEventListener("click", sayCat)
+  var numberOfText = 1
+
+  function sayCat() {
+    alert("cat")
+  }
+
+  document.getElementById("hello").addEventListener("click", Green)
+  function Green() {
+    document.getElementById("hello").style.color = "green";
+  }
+  document.getElementById("cat").addEventListener("mouseover", bigger)
+  function bigger() {
+    document.getElementById("cat").style.width = "720px"
+  }
+
+  document.getElementById("numberText").addEventListener("click", changeNumber)
+  function changeNumber() {
+    numberOfText = numberOfText + 1
+    document.getElementById("numberText").innerHTML = numberOfText
+  }
+
+
+</script>
