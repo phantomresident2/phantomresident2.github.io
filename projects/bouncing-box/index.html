@@ -44,12 +44,12 @@
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
-	
+
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
-			
+
 			function moveBoxTo(PositionX) {
 				box.css("left", positionX);
 			}
@@ -65,7 +65,7 @@
 
 			// TODO 2 - Variable declarations 
 			var positionX = 5
-			var speed = 8
+			var speed = 15
 			var score = 0
 
 			/* 
@@ -76,12 +76,15 @@
 			function update() {
 				positionX = positionX + speed;
 				moveBoxTo(positionX)
-			};
-			if (positionX < boradwith) {
-			// code to reverse speed goes here 
-			} 
-			if (speed < -1 ) {
-			speed = speed * -1;  	
+
+				if (positionX > boardWidth) {
+					// code to reverse speed goes here 
+					speed = speed * -1;
+				}
+				if (positionX < 0) {
+					// code to reverse speed goes here 
+					speed = speed * -1;
+				}
 			}
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
@@ -89,8 +92,8 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = 5
-				speed =  speed + 1
+				positionX = 0
+				speed =  3 * score + 10 
 				score = score + 1
 				changeBoxText(score)
 			};
